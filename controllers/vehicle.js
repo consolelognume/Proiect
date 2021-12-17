@@ -20,5 +20,7 @@ const postVehicle = async(req,res) => {
     }
 }
 
+
+
 module.exports = {getAllVehicles , postVehicle};
 

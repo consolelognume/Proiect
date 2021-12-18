@@ -56,3 +56,42 @@ Cazul utilizatorului înregistrat:
   Utilizatorul dispune de un meniu „Contul Meu”, în cadrul căruia poate modifica sau dezactiva contul.
 
 
+INSTRUCTIUNI DE RULARE (FAZA 2)
+
+RUTE PENTRU VEHICULE
+
+/api/postVehicle -- adaugare vehicul in baza de date
+/api/getAllVehicles' -- obtinere total vehicule
+
+RUTE PENTRU TRANSPORT
+
+/api/postTransport -- adaugare transport in baza de date
+/api/getAllTransports -- obtinere total transporturi
+/api/getAllTransportsByVehicle/:id -- obtinere transport dupa id vehicul
+
+
+RUTE PENTRU STATII
+
+/api/postStation -- adaugare statie in baza de date
+/api/getAllStations -- obtinere total statii
+/api/getAllStationsByTransport/:id -- obtinere statie dupa id transport
+
+
+RUTE PENTRU USER
+
+/api/postUser -- adaugare user in baza de date
+/api/getAllUsers -- obtinere total useri
+/api/getUserById/:id -- obtinere user dupa id
+/api/getUserByUserName/:username -- obtinere user dupa username
+/api/updateUser/:id' -- actualizare user (nume si prenume) dupa id
+/api/updateUserPassword/:id -- actualizarea parolei user-ului dupa id
+
+
+RUTE PENTRU EXPERIENTE
+
+/api/postExperience -- adaugare experienta in baza de date
+/api/getAllExperiences -- obtinere total experiente
+/api/getExperienceByUserId/:id  -- obtinere experienta dupa id-ul user-ului
+/api/modifyExperience/:id -- actualizarea experientei dupa id
+/api/deleteExperience/:id -- stergere experienta dupa id
+

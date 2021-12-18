@@ -14,6 +14,9 @@ const Station = sequelize.define(
         transportId: {
             type:DataTypes.INTEGER
         }
+    },
+    {
+        timestamps:false
     }
 )
 

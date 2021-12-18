@@ -14,6 +14,9 @@ const Transport = sequelize.define(
         vehcileId: {
             type:DataTypes.INTEGER
         }
+    },
+    {
+        timestamps:false
     }
 )
 

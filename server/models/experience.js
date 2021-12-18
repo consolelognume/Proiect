@@ -43,6 +43,9 @@ const Experience = sequelize.define(
         }
 
 
+    },
+    {
+        timestamps:false
     }
 )
 

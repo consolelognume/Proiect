@@ -1,0 +1,34 @@
+.register-container{
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    background-image: url('./login-background.jpg') !important;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form-container-register{
+    width: 550px;
+    height: 550px;
+    border-radius: 20px;
+    background-color: white;
+    display:inline-block;
+    margin-top: 70px;
+}
+
+.form-item {
+    width: 80%;
+    height: 5px;
+    margin-top: 30px;
+    border: 0.5px solid rgb(189, 245, 231);
+}
+
+.text-to-login{
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+}
+
+.link-to-login{
+    margin-top: 30px;
+}

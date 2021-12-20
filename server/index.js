@@ -3,6 +3,7 @@
 const express = require('express');
 const sequelize = require("./sequelize");
 const router = require('./routes/routes');
+const cors = require('cors');
 
 
 require("./models/vehicles");
@@ -19,6 +20,7 @@ app.use(
     })
 );
 app.use(express.json());
+app.use(cors());
 const port = 7000;
 
 app.use('/api', router);

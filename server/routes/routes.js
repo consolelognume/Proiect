@@ -8,7 +8,8 @@ const { postUser,
         getUserById,
         getUserByUserName,
         updateUser,
-        updatePassword} = require('../controllers/user');
+        updatePassword,
+        loginUser} = require('../controllers/user');
 
 const { postExperience,
         getAllExperiences,
@@ -36,6 +37,7 @@ router.get('/getAllStationsByTransport/:id' , getAllStationsByTransport);
 
 //route pt User
 router.post('/postUser' , postUser);
+router.put('/login',loginUser);
 router.get('/getAllUsers' , getAllUsers);
 router.get('/getUserById/:id' , getUserById);
 router.get('/getUserByUserName/:username' , getUserByUserName);

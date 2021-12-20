@@ -2,9 +2,22 @@ const User = require('../models/users');
 
 const postUser = async(req,res)=> {
     try{
+        const username = req.body.username;
+        const password = req.body.password;
+        const email = req.body.email;
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastName;
 
-        const user = await User.create(req.body);
-        return res.status(200).json(user);
+        const newUser = {
+            username:username,
+            password:password,
+            email:email,
+            firstName:firstName,
+            lastName:lastName
+        }
+
+        await User.create(newUser);
+        return res.status(200).send(newUser);
 
     }catch(err){
         res.status(500).json({message:"postUser problem"});
@@ -91,13 +104,34 @@ const updatePassword = async(req,res)=> {
     }
 }
 
+const loginUser = async(req,res)=> {
+    
+
+    const user = req.body;
+    console.log(user);
+    if(user.usernameLog){
+        const result = await User.findOne({
+            where:{
+                username:user.usernameLog
+            }
+        })
+
+        if(result.password!=user.passwordLog){
+            res.status(200).send({message:"Wrong"});
+        }else{
+            res.status(200).send(result);
+        }
+    }
+}
+
 module.exports = {
     postUser,
     getAllUsers,
     getUserById,
     getUserByUserName,
     updateUser,
-    updatePassword
+    updatePassword,
+    loginUser
 
 }
 

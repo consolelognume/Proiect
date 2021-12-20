@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./login-background.jpg');
+}
+
+.navigation-bar{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(151, 204, 197);
+    display: flex;
+    
+}
+
+.text-navigation-bar-h1 {
+    position: relative;
+    left: 10px;
+    
+}
+
+.list-nav-bar {
+    position: relative;
+    left: 800px;
+}
+
+.list-item {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    
+
+}

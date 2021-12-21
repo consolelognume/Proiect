@@ -31,7 +31,9 @@ const getAllExperiencesByUserId = async(req,res) => {
                 userId:  id
             }
         });
-        return res.status(200).json(experiences);
+        console.log('ceva');
+        console.log(experiences[0]);
+        res.status(200).send(experiences);
 
 
     }catch(err){

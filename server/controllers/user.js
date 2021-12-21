@@ -43,7 +43,7 @@ const getUserById = async(req,res) => {
                 id:  idReq
             }
         });
-        return res.status(200).json(user);
+        return res.status(200).send(user);
 
 
     }catch(err){

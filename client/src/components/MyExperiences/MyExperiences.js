@@ -4,18 +4,60 @@ import {useParams} from 'react-router-dom';
 
 
 function MyExperiences(){
-    const[experiences,setExperiences] = useState();
+    
+    
+
+
+    const [experiences,setExperiences] = useState([]);
     const {id} = useParams();
-    console.log(id);
+    
     useEffect(()=>{
 
         Axios.get('http://localhost:7000/api/getExperienceByUserId/'+id).then(response=>{
-            console.log(response);
+            
+            setExperiences(response.data);
+            
+            // for(let element of response.data){
+            //     setExperiences([ ... experiences],{
+            //         id:element.id,
+            //         vehicleId:element.vehicleId,
+            //         transportId:element.transportId,
+            //         startingPointId:element.startingPointId,
+            //         destinationPointId:element.destinationPointId,
+            //         crowdness:element.crowdness,
+            //         time:element.time,
+            //         duration:element.duration,
+            //         observation:element.observation,
+            //         userId:element.userId
+            //     })
+
+                
+            // }
+            
         })
     })
 
+    
+
+    const seeExperiences = () => {
+        return experiences.map( (experience , i) => {
+            return(
+                <tr key={i}>
+                    <td>{experience.duration}</td>
+                    <td>{experience.time}</td>
+                </tr>
+            )
+        })
+    }
+
     return(
-        <div>Experiences</div>
+        <div className="container">
+            <table>
+                <tbody>
+                    {seeExperiences()}
+                </tbody>
+            </table>
+        </div>
     )
 
 }

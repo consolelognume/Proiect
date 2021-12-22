@@ -16,6 +16,7 @@ function mainPage(){
                 <ul className='list-nav-bar'>
                     <li className='list-item'><Link to='/login' className='list-item'>Login</Link></li>
                     <li className='list-item'><Link to='/register' className='list-item'>Register</Link></li>
+                    <li className='list-item'><Link to='/anonimUser'>Continue as anonim user</Link></li>
                 </ul>
             </nav>
         </div>

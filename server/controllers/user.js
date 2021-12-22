@@ -108,7 +108,7 @@ const loginUser = async(req,res)=> {
     
 
     const user = req.body;
-    console.log(user);
+    
     if(user.usernameLog){
         const result = await User.findOne({
             where:{

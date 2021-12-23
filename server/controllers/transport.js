@@ -18,7 +18,7 @@ const getAllTransportsByVehicle = async(req,res) => {
                 vehcileId:  id
             }
         });
-        return res.status(200).json(transports);
+        return res.status(200).send(transports);
 
 
     }catch(err){

@@ -9,18 +9,18 @@ const Experience = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
-        vehicleId: {
-            type: DataTypes.INTEGER 
+        vehicleName: {
+            type: DataTypes.STRING 
         },
-        transportId: {
-            type: DataTypes.INTEGER 
+        transportName: {
+            type: DataTypes.STRING 
         },
-        startingPointId: {
-            type: DataTypes.INTEGER 
+        startingPointName: {
+            type: DataTypes.STRING 
 
         },
-        destinationPointId:{
-            type: DataTypes.INTEGER
+        destinationPointName:{
+            type: DataTypes.STRING
         },
         crowdness: {
             type:DataTypes.INTEGER,

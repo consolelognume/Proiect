@@ -78,6 +78,23 @@ const deleteExperience = async(req,res) => {
 
 }
 
+const getExperienceById = async(req,res)=>{
+    try{
+        const idReq = req.params.id;
+        const experience = await Experience.findAll({
+            where:{
+                id:  idReq
+            }
+        });
+        return res.send(experience);
+
+    }catch(err){
+        return res.status(500).json({message:"getExperienceById problem"});
+    }
+}
+
+
+
 
 
 module.exports = {
@@ -85,4 +102,5 @@ module.exports = {
     getAllExperiences,
     getAllExperiencesByUserId,
     modifyExperience,
-    deleteExperience};
+    deleteExperience,
+    getExperienceById};

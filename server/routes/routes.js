@@ -15,7 +15,8 @@ const { postExperience,
         getAllExperiences,
         getAllExperiencesByUserId,
         modifyExperience,
-        deleteExperience} = require('../controllers/experience');
+        deleteExperience,
+        getExperienceById} = require('../controllers/experience');
 
 //route pt Vehicle
 
@@ -49,6 +50,7 @@ router.put('/updateUserPassword/:id' , updatePassword);
 router.post('/postExperience' , postExperience);
 router.get('/getAllExperiences' , getAllExperiences);
 router.get('/getExperienceByUserId/:id' , getAllExperiencesByUserId);
+router.get('/getExperienceById/:id',getExperienceById);
 router.put('/modifyExperience/:id' ,modifyExperience )
 router.delete('/deleteExperience/:id' , deleteExperience);
 

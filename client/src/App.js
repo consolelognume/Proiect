@@ -5,7 +5,8 @@ import MainPage from './components/MainPage/MainPage';
 import UserProfile from './components/UserProfile/UserProfile';
 import MyExperiences from './components/MyExperiences/MyExperiences';
 import AddExperience from './components/AddExperience/AddExperience';
-import AnonimMainPage from './components/AnonimMainPage/AnonimMainPage'
+import AnonimMainPage from './components/AnonimMainPage/AnonimMainPage';
+import ChangeExperience from './components/ChangeExperience/ChangeExperience';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/myprofile/:id/myexperiences' element={<MyExperiences/>}></Route>
             <Route path='/myprofile/:id/addexperience' element={<AddExperience/>}></Route>
             <Route path='/anonimUser' element={<AnonimMainPage/>}></Route>
+            <Route path='/myprofile/:id/myexperiences/:idExperience' element={<ChangeExperience/>}></Route>
             
             
           </Routes>

@@ -9,9 +9,9 @@ table, tbody{
 .table{
     background-color: red;
 }
-.tabel_invizibil{
+/* .tabel_invizibil{
     display: none;
-}
+} */
 .tabel_vizibil{
     display: block;
 }

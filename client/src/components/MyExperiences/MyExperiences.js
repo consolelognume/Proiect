@@ -2,16 +2,18 @@ import React, { useState ,useEffect} from "react";
 import Axios from "axios";
 import {useParams} from 'react-router-dom';
 import './MyExperiences.css';
+import {useNavigate} from 'react-router-dom';
 
 
 function MyExperiences(){
     
     
 
-
+    const navigate = useNavigate();
     const [experiences,setExperiences] = useState([]);
     const {id} = useParams();
     const [keyword,setKeyWord] = useState("");
+    const [idExperience,setIdExperience]=useState();
     
     useEffect(()=>{
 
@@ -89,6 +91,17 @@ function MyExperiences(){
         }
     }
 
+    const optionsForExperiences =()=>{
+        return experiences.map( (experience , i) => {
+            return(
+                <option>{experience.id}</option>
+            )
+        })
+    }
+
+    const changeExperience =()=>{
+        navigate(`/myprofile/${id}/myexperiences/${idExperience}`);
+    }
 
     return(
         <div className="container">
@@ -102,7 +115,13 @@ function MyExperiences(){
                 <tbody>
                     {seeExperiencesByKeyWord()}
                 </tbody>
+                
             </table>
+            <select onChange={(e)=>{setIdExperience(e.target.value)}} >
+            <option disabled selected value> -- select an option -- </option>
+                {optionsForExperiences()}
+            </select>
+            <button onClick={changeExperience}>Navigate to the experience</button>
         </div>
     )
 

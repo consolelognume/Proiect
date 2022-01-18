@@ -59,7 +59,7 @@ function Register(){
 
                 </form>
             <div className='link-to-login'>
-                <Link to='/login' className='text-to-login'>Aleardy have an account ? Click here</Link>
+                <Link to='/login' className='text-to-login'>Already have an account ? Click here</Link>
             </div>
             </div>
         </div>

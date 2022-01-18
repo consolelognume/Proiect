@@ -25,7 +25,7 @@ function AnonimMainPage(){
 
     return(
         <div className="container">
-            <table>
+            <table id="table_id">
                 <tbody>
                     {getExperiences()}
                 </tbody>

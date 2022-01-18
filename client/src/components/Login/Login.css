@@ -5,7 +5,7 @@
     background-image: url('./login-background.jpg') !important;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+   
     
 }
 
@@ -36,6 +36,7 @@
     background-color: white;
     display:inline-block;
     margin-top: 100px;
+    border: 2px solid black;
 }
 
 .form-item{

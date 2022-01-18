@@ -156,24 +156,27 @@ function AddExperience(){
     
     return(
         <div class="wrapper">
-           
-    <form class="form" id='form'>
-      <div className="pageTitle title">Add Experience </div>
+    
+      <div className="pageTitle title"><span>Add Experience </span></div>
+      <h1></h1>
+      <h1></h1>
       <div className="secondaryTitle title">Please fill this form to add an experience</div>
+      <h1></h1>
+      <form class="form_add_experience" id='form'>
       <select className="select-vehicle" onChange={selectedVehicleOption}>{vehiclesSelect()}</select>
       <select className="select-vehicle" onChange={selectedTransportOption}>{transportSelect()}</select>
       <select className="select-vehicle" onChange={selectedStationOption}>{stationSelect()}</select>
-      <select onChange={selectedDestinationOption}>{destinationSelect()}</select>
-      <select onChange={selectedCrowdness}>
+      <select className="select-vehicle" onChange={selectedDestinationOption}>{destinationSelect()}</select>
+      <select className="select-vehicle" onChange={selectedCrowdness}>
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
       </select>
-      <input type="time" onChange={selectedTime} ></input>
-      <input type="number" onChange={selectedDuration}></input>
-      <textarea onChange={selectedObservation}></textarea>
+      <input className="select-vehicle" type="time" onChange={selectedTime} ></input>
+      <input className="select-vehicle" type="number" onChange={selectedDuration}></input>
+      <textarea className="select-vehicle" onChange={selectedObservation}></textarea>
       
       <button className="submit formEntry" onClick={addExperience}>Add</button>
     </form>

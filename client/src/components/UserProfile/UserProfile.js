@@ -52,8 +52,8 @@ function UserProfile(){
         <div className='container'>
             <div className='head-text'>Hi , {currentUser.username} ! Share your experiences with us !</div>
             <div className='user-buttons'>
-                <button className='user-button' onClick={navigateToAddExperience} >Add experience</button>
-                <button className='user-button' onClick={navigateToMyExperiences}>See your experiences</button>
+                <button className='user-button' onClick={navigateToAddExperience} ><span> Add experience</span></button>
+                <button className='user-button' onClick={navigateToMyExperiences}><span>See your experiences</span></button>
             </div>
         </div>
     )

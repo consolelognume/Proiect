@@ -1,6 +1,62 @@
 .container{
     width: 100%;
     height: 100vh;
-    background-image: url('./color.png');
+    background-image: url('./PublicTransportation.jpg');
 }
 
+  .head-text{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: flex;
+    padding: 10px;
+    border: 4px solid rgb(51, 35, 15);
+    color: #FFFFFF;
+    background-color: rgb(245 146 27);
+    margin: auto;  
+    text-align: center;
+    
+
+  }
+  .user-button {
+    display: grid;
+    border-radius: 5px;
+    background-color: rgb(245 146 27);
+    border: 2px solid black;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    
+   
+  }
+  
+  .user-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .user-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .user-button:hover span {
+    padding-right: 25px;
+  }
+  
+  .user-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

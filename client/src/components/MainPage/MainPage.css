@@ -1,32 +1,45 @@
 .container {
     width: 100%;
     height: 100vh;
-    background-image: url('./login-background.jpg');
+    background-image: url('./PublicTransportation.jpg') !important;
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-weight: bold;
 }
 
 .navigation-bar{
     width: 100%;
     height: 80px;
-    background-color: rgb(151, 204, 197);
+    background-color: rgb(245 146 27);
     display: flex;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.5);
+    width: flex;
     
 }
 
 .text-navigation-bar-h1 {
     position: relative;
     left: 10px;
+    color:rgb(48 48 48);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: flex;
     
 }
 
 .list-nav-bar {
     position: relative;
     left: 800px;
+    margin-top:5px;
+    margin-bottom:5px;
+    width: flex;
 }
 
 .list-item {
     text-decoration: none;
     list-style: none;
     color: black;
-    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    width: flex;
 
 }

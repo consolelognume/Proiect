@@ -52,7 +52,7 @@ function MyExperiences(){
 
     return(
         <div className="container">
-            <table>
+            <table className="table">
                 <tbody>
                     {seeExperiences()}
                 </tbody>

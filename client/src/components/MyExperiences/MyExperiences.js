@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from "react";
 import Axios from "axios";
 import {useParams} from 'react-router-dom';
+import './MyExperiences.css';
 
 
 function MyExperiences(){
@@ -10,6 +11,7 @@ function MyExperiences(){
 
     const [experiences,setExperiences] = useState([]);
     const {id} = useParams();
+    const [keyword,setKeyWord] = useState("");
     
     useEffect(()=>{
 
@@ -48,13 +50,57 @@ function MyExperiences(){
                 </tr>
             )
         })
+        
     }
+
+    const seeExperiencesByKeyWord = ()=> {
+        // let tabel = document.getElementById("tabel_id");
+        // console.log(tabel);
+        // tabel.classList.add("tabel_vizibil");
+        if(experiences.filter(experience=>experience.startingPointName === keyword).length>0){
+            return experiences.filter(experience=>experience.startingPointName === keyword).map((experience,i)=>{
+                return(
+                  
+                        
+                            <tr key={i}>
+                                <td>{experience.id}</td>
+                                <td>{experience.vehicleName}</td>
+                                <td>{experience.transportName}</td>
+                                <td>{experience.startingPointName}</td>
+                                <td>{experience.destinationPointName}</td>
+                            </tr>
+                       
+                   
+                )
+            })
+        }else if(experiences.filter(experience=>experience.vehicleName === keyword).length>0){
+            return experiences.filter(experience=>experience.vehicleName === keyword).map((experience,i)=>{
+                return(
+                   
+                                <tr key={i}>
+                                    <td>{experience.vehicleName}</td>
+                                    <td>{experience.transportName}</td>
+                                    <td>{experience.startingPointName}</td>
+                                    <td>{experience.destinationPointName}</td>
+                                </tr>
+                     
+                )
+            })
+        }
+    }
+
 
     return(
         <div className="container">
+            <input  className="text_cautare" type="text" placeholder="Type keyword here" onChange={(e)=>{setKeyWord(e.target.value)}}></input>
             <table className="table">
                 <tbody>
                     {seeExperiences()}
+                </tbody>
+            </table>
+            <table className="tabel_vizibil" id="tabel_id">
+                <tbody>
+                    {seeExperiencesByKeyWord()}
                 </tbody>
             </table>
         </div>

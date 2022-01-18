@@ -1,7 +1,17 @@
-.container{
+/* .container{
     background-color: coral;
 }
 
 table, tbody{
     border: 1px solid black;
+} */
+
+.table{
+    background-color: red;
+}
+.tabel_invizibil{
+    display: none;
+}
+.tabel_vizibil{
+    display: block;
 }

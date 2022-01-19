@@ -56,9 +56,7 @@ function MyExperiences(){
     }
 
     const seeExperiencesByKeyWord = ()=> {
-        // let tabel = document.getElementById("tabel_id");
-        // console.log(tabel);
-        // tabel.classList.add("tabel_vizibil");
+   
         if(experiences.filter(experience=>experience.startingPointName === keyword).length>0){
             return experiences.filter(experience=>experience.startingPointName === keyword).map((experience,i)=>{
                 return(
@@ -70,6 +68,10 @@ function MyExperiences(){
                                 <td>{experience.transportName}</td>
                                 <td>{experience.startingPointName}</td>
                                 <td>{experience.destinationPointName}</td>
+                                <td>{experience.crowdness}</td>
+                                <td>{experience.time}</td>
+                                <td>{experience.duration}</td>
+                                <td>{experience.observations}</td>
                             </tr>
                        
                    
@@ -80,13 +82,36 @@ function MyExperiences(){
                 return(
                    
                                 <tr key={i}>
+                                    <td>{experience.id}</td>
                                     <td>{experience.vehicleName}</td>
                                     <td>{experience.transportName}</td>
                                     <td>{experience.startingPointName}</td>
                                     <td>{experience.destinationPointName}</td>
+                                    <td>{experience.crowdness}</td>
+                                    <td>{experience.time}</td>
+                                    <td>{experience.duration}</td>
+                                    <td>{experience.observations}</td>
                                 </tr>
                      
                 )
+            })
+        }else if(experiences.filter(experience=>experience.transportName === keyword).length>0){
+            return experiences.filter(experience=>experience.transportName === keyword).map((experience,i)=>{
+                return(
+                   
+                    <tr key={i}>
+                        <td>{experience.id}</td>
+                        <td>{experience.vehicleName}</td>
+                        <td>{experience.transportName}</td>
+                        <td>{experience.startingPointName}</td>
+                        <td>{experience.destinationPointName}</td>
+                        <td>{experience.crowdness}</td>
+                        <td>{experience.time}</td>
+                        <td>{experience.duration}</td>
+                        <td>{experience.observations}</td>
+                    </tr>
+         
+    )
             })
         }
     }

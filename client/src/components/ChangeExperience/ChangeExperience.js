@@ -14,7 +14,30 @@ function ChangeExperience(){
     const [newDuration,setNewDuration] = useState(0);
     const [newObservation,setNewObservation] = useState("");
     const navigate = useNavigate();
+    const [vehicleName,setVehicleName] = useState('');
+    const [transportName,setTransportName] = useState('');
+    const [startPointName,setStartPointName] = useState('');
+    const [destinationPointName,setDestinationPointName] = useState('');
+
     
+    
+      useEffect(()=>{
+        Axios.get('http://localhost:7000/api/getExperienceById/'+idExperience).then(response=>{
+            setExperience(response.data);
+            setVehicleName(response.data[0].vehicleName);
+            setTransportName(response.data[0].transportName);
+            setStartPointName(response.data[0].startingPointName);
+            setDestinationPointName(response.data[0].destinationPointName);
+        
+        
+        })
+      })
+            
+        
+
+        
+        
+        
    
 
     
@@ -43,21 +66,21 @@ function ChangeExperience(){
     }
 
 
-    const loadExperience =(event)=>{
-        event.preventDefault();
+    // const loadExperience =(event)=>{
+    //     event.preventDefault();
 
-        Axios.get('http://localhost:7000/api/getExperienceById/'+idExperience).then(response=>{
-            setExperience(response.data);
-            console.log(response.data);
+    //     Axios.get('http://localhost:7000/api/getExperienceById/'+idExperience).then(response=>{
+    //         setExperience(response.data);
+    //         console.log(response.data);
             
-        })
-        let inputs = document.querySelectorAll('input');
-        inputs[0].setAttribute('value',experience[0].vehicleName);
-        inputs[1].setAttribute('value',experience[0].trasnportName);
-        inputs[2].setAttribute('value',experience[0].startingPointName);
-        inputs[3].setAttribute('value',experience[0].destinationPointName);
+    //     })
+    //     let inputs = document.querySelectorAll('input');
+    //     inputs[0].setAttribute('value',experience[0].vehicleName);
+    //     inputs[1].setAttribute('value',experience[0].trasnportName);
+    //     inputs[2].setAttribute('value',experience[0].startingPointName);
+    //     inputs[3].setAttribute('value',experience[0].destinationPointName);
  
-    }
+    // }
 
 
     const deleteExperience=()=>{
@@ -69,10 +92,10 @@ function ChangeExperience(){
     return(
         <div className="container">
              <form>
-         <input type="text"  readOnly></input>
-         <input type="text"  readOnly></input>
-         <input type="text"  readOnly></input>
-         <input type="text"  readOnly></input>
+         <input type="text" value={vehicleName} readOnly></input>
+         <input type="text" value={transportName} readOnly></input>
+         <input type="text" value={startPointName} readOnly></input>
+         <input type="text" value={destinationPointName} readOnly></input>
          <label for="crowdness">crowdness</label>
          <select onChange={(e)=>{setNewCrowdness(e.target.value)}}>
              <option>1</option>
@@ -87,7 +110,7 @@ function ChangeExperience(){
          <input type="number" onChange={(e)=>{setNewDuration(e.target.value)}}></input>
          <label >observations:</label>
          <input type="textarea" onChange={(e)=>{setNewObservation(e.target.value)}}></input>
-         <button onClick={loadExperience}>Load</button>
+         {/* <button onClick={loadExperience}>Load</button> */}
          <button onClick={changeExperience}>Save</button>
          <button onClick={deleteExperience}>Delete</button>
       </form>

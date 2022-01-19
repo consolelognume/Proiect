@@ -21,6 +21,23 @@ const postVehicle = async(req,res) => {
 }
 
 
+const deleteVehicle = async(req,res) => {
+    try{
+        const result = await Vehicle.destroy({
+            where:{
+                id:req.params.id
+            }
+        });
+        return res.status(200).json({message:"Stergere efectuata cu succes"});
 
-module.exports = {getAllVehicles , postVehicle};
+    }catch(err){
+        return res.status(500).json({message:"DeleteVehicle Error"});
+    }
+
+
+}
+
+
+
+module.exports = {getAllVehicles , postVehicle, deleteVehicle};
 

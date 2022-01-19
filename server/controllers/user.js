@@ -124,6 +124,22 @@ const loginUser = async(req,res)=> {
     }
 }
 
+const deleteUser = async(req,res) => {
+    try{
+        const result = await User.destroy({
+            where:{
+                id:req.params.id
+            }
+        });
+        return res.status(200).json({message:"Stergere efectuata cu succes"});
+
+    }catch(err){
+        return res.status(500).json({message:"DeleteUser Error"});
+    }
+
+
+}
+
 module.exports = {
     postUser,
     getAllUsers,
@@ -131,7 +147,8 @@ module.exports = {
     getUserByUserName,
     updateUser,
     updatePassword,
-    loginUser
+    loginUser,
+    deleteUser
 
 }
 

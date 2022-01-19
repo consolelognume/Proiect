@@ -37,5 +37,22 @@ const getAllStationsByTransport = async(req,res) => {
     }
 }
 
-module.exports = {postStation , getAllStations , getAllStationsByTransport};
+const deleteStation = async(req,res) => {
+    try{
+        const result = await Station.destroy({
+            where:{
+                id:req.params.id
+            }
+        });
+        return res.status(200).json({message:"Stergere efectuata cu succes"});
+
+    }catch(err){
+        return res.status(500).json({message:"DeleteExperience Error"});
+    }
+
+
+}
+
+
+module.exports = {postStation , getAllStations , getAllStationsByTransport, deleteStation};
 

@@ -154,34 +154,45 @@ function AddExperience(){
 
 
     
-    return(
-        <div class="wrapper">
-    
-      <div className="pageTitle title"><span>Add Experience </span></div>
-      <h1></h1>
-      <h1></h1>
-      <div className="secondaryTitle title">Please fill this form to add an experience</div>
-      <h1></h1>
-      <form class="form_add_experience" id='form'>
-      <select className="select-vehicle" onChange={selectedVehicleOption}>{vehiclesSelect()}</select>
-      <select className="select-vehicle" onChange={selectedTransportOption}>{transportSelect()}</select>
-      <select className="select-vehicle" onChange={selectedStationOption}>{stationSelect()}</select>
-      <select className="select-vehicle" onChange={selectedDestinationOption}>{destinationSelect()}</select>
-      <select className="select-vehicle" onChange={selectedCrowdness}>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-      <input className="select-vehicle" type="time" onChange={selectedTime} ></input>
-      <input className="select-vehicle" type="number" onChange={selectedDuration}></input>
-      <textarea className="select-vehicle" onChange={selectedObservation}></textarea>
-      
-      <button className="submit formEntry" onClick={addExperience}>Add</button>
-    </form>
-  </div>
-    )
+   return(
+    <div class="wrapper">
+
+  <div className="pageTitle title"><span>Add Experience </span></div>
+  <h1></h1>
+  <h1></h1>
+  <div className="container2">
+  <div className="secondaryTitle title">Please fill this form to add an experience</div>
+  <h1></h1>
+  <form class="form_add_experience" id='form'>
+  <label  for ="vehicle" class="select-vehicle">vehicle</label>
+  <select id="vehicle" className="select-vehicle" onChange={selectedVehicleOption}>{vehiclesSelect()}</select>
+  <label className="select-vehicle" for="transport">transport</label>
+  <select id="transport" className="select-vehicle" onChange={selectedTransportOption}>{transportSelect()}</select>
+  <label className="select-vehicle" for="starting_point">starting point</label>
+  <select id="starting_point" className="select-vehicle" onChange={selectedStationOption}>{stationSelect()}</select>
+  <label className="select-vehicle" for="destination_point">destination point</label>
+  <select id="destination_point" className="select-vehicle" onChange={selectedDestinationOption}>{destinationSelect()}</select>
+  <label className="select-vehicle" for="crowdness">crowdness</label>
+  <select id="crowdness" className="select-vehicle" onChange={selectedCrowdness}>
+    <option disabled selected value>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <label className="select-vehicle" for="time">time</label>
+  <input id="time" className="select-vehicle" type="time" onChange={selectedTime} >
+</input>
+  <label className="select-vehicle" for="duration">duration</label>
+  <input id = "duration" className="select-vehicle" type="number" onChange={selectedDuration}></input>
+  <label for="textarea" className="select-vehicle" >observations</label>
+  <textarea id="textarea" className="select-vehicle" onChange={selectedObservation}></textarea>
+  
+  <button className="submit formEntry" onClick={addExperience}>Add</button>
+</form>
+</div>
+</div>
+)
 }
 
 export default AddExperience;

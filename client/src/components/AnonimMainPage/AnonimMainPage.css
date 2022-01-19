@@ -1,26 +1,57 @@
-table{
-    background-color: rgb(236, 152, 42);
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,.5);
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding:5px;
-}
-td{
-    border:1px solid black;
-    padding:3px;
-}
+
 
 .container{
     width:100%;
     height:100vh;
+    text-align: center;
     
 }
-.search_bar_anonim{
-    margin:10px;
-    width:150px;
-    height:50px;
-    border:0.5px solid black;
-    border-radius: 2px;
+
+
+
+.thead_anonim{
+    background-color: rgba(36, 11, 70, 0.4);
 }
-.search_result_table{
-    display: none;
+
+.th_anonim{
+padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.td_anonim{
+    background-color: rgb(21, 21, 70, 0.9);
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 13px;
+    color: #fff;
+    border-bottom: solid 1px  rgb(248, 238, 238, 0.8);
+}
+
+.table_anonim{
+    max-height:300px;
+    overflow:auto;
+    background: -webkit-linear-gradient(left, #c4ecf3, #56e6c2);
+    background: linear-gradient(to right, #c4ecf3, #56e6c2); 
+    margin:auto;
+}
+
+
+.pageTitleAnonim{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    width: flex;
+    padding: 10px;
+    border: 4px solid rgb(51, 35, 15);
+    color: #FFFFFF;
+    background-color: rgb(245 146 27) ;
+    margin: auto;  
+    text-align: center;
+    margin-bottom:40px;
 }
